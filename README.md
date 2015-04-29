@@ -1,14 +1,15 @@
 wga.js
 =========
 
-**wga.js** is a small function for JavaScript to **wrap a generator or async
-function** for use as **request handlers** and **middlewares**.
+wga.js is a small JS function which can wrap a generator or async
+function for use as request handlers and middlewares in Express.
+wga.js enable Express use generator or async function to realize async operate
 
 
 Installing
 ----------
 ```sh
-npm install wga
+npm install wga --save
 ```
 
 Using with generator
