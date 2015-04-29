@@ -1,0 +1,26 @@
+{
+  "name": "wga",
+  "version": "0.0.1",
+  "description": "wrapper for generator and async to enable them use in Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pana/wga.git"
+  },
+  "keywords": [
+    "generator",
+    "wrapper"
+  ],
+  "author": "Pana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pana/wga/issues"
+  },
+  "homepage": "https://github.com/Pana/wga",
+  "dependencies": {
+    "co": "^4.5.2"
+  }
+}
