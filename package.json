@@ -4,7 +4,7 @@
   "description": "wrapper for generator and async to enable them use in Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "babel-node --stage 0 test/async.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
   "homepage": "https://github.com/Pana/wga",
   "dependencies": {
     "co": "^4.5.2"
+  },
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "express": "^4.12.3"
   }
 }
