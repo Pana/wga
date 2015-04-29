@@ -1,6 +1,6 @@
 {
   "name": "wga",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "wrapper for generator and async to enable them use in Express",
   "main": "index.js",
   "scripts": {

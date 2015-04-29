@@ -26,14 +26,13 @@ app.get("/", wga(function*(req, res, next) {
 In the above example, the thrown error will be passed to `next`, which in
 Express's case calls the error handling middleware later on. If the generator succeeds, the `next` callback will not be called.
 
-If you need to, like in middleware handlers, you can always call `next`
-yourself:
+If you need to, like in middleware handlers, you can always call `next` yourself:
 
 ```javascript
 app.use(wga(function*(req, res, next) {
-  var account = yield accounts.read(req.session.accountId)
-  if (account == null) return void next(new Error("Unauthorized"))
-  req.account = account
+  var user = yield User.find(req.session.userId)
+  if (user == null) return next(new Error("Unauthorized"))
+  req.user = user
   next()
 }))
 ```
@@ -43,9 +42,9 @@ Using with async function
 ---------
 ```javascript
 app.use(wga(async function(req, res, next) {
-  var account = await accounts.read(req.session.accountId)
-  if (account == null) return void next(new Error("Unauthorized"))
-  req.account = account
+  var user = await User.find(req.session.userId)
+  if (user == null) return next(new Error("Unauthorized"))
+  req.user = user
   next()
 }))
 
@@ -53,6 +52,7 @@ app.get('/', wga(async function (req, res) {
   let result = await Promise.resolve('Hello world')
   res.send(`${result}\n`)
 }))
+```
 
 
 License
