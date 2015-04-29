@@ -18,9 +18,9 @@ Using with generator
 var wga = require("wga")
 var app = require("express")()
 
-app.get("/", wga(function*(req, res, next) {
-  if (req.account == null) throw new Error("Unauthorized")
-  res.send("Hello, world!")
+app.get("/books", wga(function*(req, res, next) {
+  var books = yield Book.findAll()
+  res.send(books)
 }))
 ```
 
