@@ -1,7 +1,7 @@
 {
   "name": "wga",
-  "version": "0.5.0",
-  "description": "wrapper for generator and async to enable them use in Express",
+  "version": "0.5.2",
+  "description": "A generator, async/await wrapper, turn them into Express request handler",
   "main": "index.js",
   "scripts": {
     "test": "babel-node --stage 0 test/async.js"
@@ -11,8 +11,11 @@
     "url": "https://github.com/Pana/wga.git"
   },
   "keywords": [
+    "Express generator wrapper",
     "generator",
-    "wrapper"
+    "wrapper",
+    "async",
+    "express"
   ],
   "author": "Pana",
   "license": "MIT",
