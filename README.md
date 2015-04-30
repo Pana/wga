@@ -24,8 +24,9 @@ app.get("/books", wga(function*(req, res, next) {
 }))
 ```
 
-In the above example, the thrown error will be passed to `next`, which in
-Express's case calls the error handling middleware later on. If the generator succeeds, the `next` callback will not be called.
+If any error been throwed out, they will be passed to `next`, which in
+Express's case calls the error handling middleware later on. 
+If the generator succeeds, the `next` callback will not be called.
 
 If you need to, like in middleware handlers, you can always call `next` yourself:
 
