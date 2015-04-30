@@ -1,7 +1,7 @@
-var co = require("co")
+var co = require("co");
 
 module.exports = function(fn) {
-    return isGeneratorFunction(fn) ? gWrapper(fn) : aWrapper(fn)
+    return isGeneratorFunction(fn) ? gWrapper(fn) : aWrapper(fn);
 }
 
 /*
@@ -9,10 +9,10 @@ module.exports = function(fn) {
  */
 function gWrapper(fn) {
     if (fn.length == 4) return function(err, req, res, next) {
-        return co(fn.call(this, err, req, res, next)).catch(next)
+        return co(fn.call(this, err, req, res, next)).catch(next);
     }
     return function() {
-        return co(fn.apply(this, arguments)).catch(arguments[arguments.length - 1])
+        return co(fn.apply(this, arguments)).catch(arguments[arguments.length - 1]);
     }
 }
 
@@ -21,10 +21,10 @@ function gWrapper(fn) {
  */
 function aWrapper(fn) {
     if (fn.length == 4) return function(err, req, res, next) {
-        return fn.call(this, err, req, res, next).catch(next)
+        return fn.call(this, err, req, res, next).catch(next);
     }
     return function() {
-        return fn.apply(this, arguments).catch(arguments[arguments.length - 1])
+        return fn.apply(this, arguments).catch(arguments[arguments.length - 1]);
     }
 }
 

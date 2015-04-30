@@ -2,8 +2,8 @@ wga
 =========
 
 wga is a small JS function which can wrap a generator or async
-function to used as request handlers and middlewares in Express.
-wga.js brought modern async write style to Express
+function to used as request handlers or middleware in Express.
+wga brought modern async write style to Express
 
 
 Installing
